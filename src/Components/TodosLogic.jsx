@@ -21,6 +21,30 @@ const TodosLogic = () => {
       completed: false,
     },
   ]);
+  // const setUpdate = (updatedTitle, id) => {
+  //   setTodos(
+  //     todos.map((todo) => {
+  //       if (todo.id === id) {
+  //         todo.title = updatedTitle;
+  //       }
+  //       return todo;
+  //     }),
+  //   );
+  // };
+  const setUpdate = (updatedTitle, id) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            title: updatedTitle,
+          };
+        }
+        return todo;
+      }),
+    );
+  };
+
   const handleChange = (id) => {
     setTodos((prevState) => prevState.map((todo) => {
       if (todo.id === id) {
@@ -56,8 +80,10 @@ const TodosLogic = () => {
         todosProps={todos}
         handleChange={handleChange}
         delTodo={delTodo}
+        setUpdate={setUpdate}
       />
     </div>
   );
 };
+
 export default TodosLogic;
