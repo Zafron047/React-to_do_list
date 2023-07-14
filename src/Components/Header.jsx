@@ -1,3 +1,5 @@
+import '../styles/Header.module.css';
+
 const Header = () => (
   <header>
     <h1>todos</h1>

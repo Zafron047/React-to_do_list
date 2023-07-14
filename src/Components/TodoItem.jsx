@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import styles from './TodoItem.module.css';
+import styles from '../styles/TodoItem.module.css';
 
 const TodoItem = ({
   itemProp, handleChange, delTodo, setUpdate,
@@ -31,9 +31,7 @@ const TodoItem = ({
           onChange={() => handleChange(itemProp.id)}
         />
         {itemProp.title}
-        &nbsp; &nbsp;
         <button type="button" onClick={handleEditing}>Edit</button>
-        &nbsp; &nbsp;
         <button onClick={() => delTodo(itemProp.id)} type="button">Delete</button>
       </div>
       <input
